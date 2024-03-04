@@ -1,0 +1,2 @@
+# Speech-Recognition
+ The "Speech Recognition with Assembly AI API" project aims to provide a seamless solution for converting audio files into text using Assembly AI's powerful API. Leveraging the capabilities of Assembly AI, this Python project offers an efficient and accurate method for transcribing speech from various sources such as recorded lectures, interviews, meetings, or any audio content.
