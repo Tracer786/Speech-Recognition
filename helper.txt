@@ -1,3 +1,9 @@
 First step is to install the assemblyai's library
     -> pip install assemblyai
-    
+
+This project has 4 steps: 
+
+    1. Upload the file that we have locally to assemblyai
+    2. Start Transcription
+    3. Keep pooling Assemblyai's API to see whether the transcription is complete or not
+    4. Save the transcription file to our pc
