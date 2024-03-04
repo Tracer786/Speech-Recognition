@@ -1,0 +1,3 @@
+First step is to install the assemblyai's library
+    -> pip install assemblyai
+    
