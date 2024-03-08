@@ -5,7 +5,7 @@ from api_secrets import API_KEY_ASSEMBLYAI
 
 import sys  # to get the file name from the terminal
 
-upload_endpoint = "'https://api.assemblyai.com/v2/upload'"
+upload_endpoint = 'https://api.assemblyai.com/v2/upload'
 
 filename = sys.argv[1]
 
