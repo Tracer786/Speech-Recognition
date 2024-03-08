@@ -7,8 +7,12 @@ import sys  # to get the file name from the terminal
 
 upload_endpoint = 'https://api.assemblyai.com/v2/upload'
 
+transcript_endpoint = 'https://api.assemblyai.com/v2/transcript'
+
 filename = sys.argv[1]
 
+
+# upload
 
 def read_file(filename, chunk_size=5242880):
     with open(filename, 'rb') as _file:
@@ -29,10 +33,14 @@ response = requests.post(upload_endpoint,
 
 print(response.json())  # after uploading the file we need to check what kind of response we are getting
 
-
-# upload
+audio_url = response.json()['upload_url']
 
 # transcribe
+
+json = { "audio_url": audio_url}
+response = requests.post(transcript_endpoint, json=json, headers=headers)
+print(response.json())
+
 
 # pooling 
 
