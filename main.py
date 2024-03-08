@@ -7,7 +7,7 @@ headers = {'authorization': API_KEY_ASSEMBLYAI}
 filename = sys.argv[1]
 
 # upload
-def upload():
+def upload(filename):
     def read_file(filename, chunk_size=5242880):
         with open(filename, 'rb') as _file:
             while True:
@@ -30,6 +30,10 @@ def transcribe(audio_url):
     # print(response.json())
     job_id = transcript_response.json()['id']
     return job_id
+
+audio_url = upload(filename)
+job_id = transcribe(audio_url)
+print(job_id)
 
 # pooling 
 
