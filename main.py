@@ -36,9 +36,22 @@ transcript_id = transcribe(audio_url)
 print(transcript_id)
 
 # polling 
-polling_endpoint = transcript_endpoint + '/' + transcript_id
-polling_response = requests.get(polling_endpoint, headers = headers)
-print(polling_response)
-print(polling_response.json())
+def polling(transcript_id):
+    polling_endpoint = transcript_endpoint + '/' + transcript_id
+    polling_response = requests.get(polling_endpoint, headers = headers)
+    # print(polling_response)
+    # print(polling_response.json())
+    return polling_response.json()
+
+#will check whether the polling is complete or not
+def get_transcription_result_url():
+    transcript_id = transcribe()
+    while True:
+        data = polling(transcript_id)
+        if data['status'] == 'completed':
+            return data, None
+        elif data['status'] == 'error':
+            return data, "error"
+
 
 # save transcription
