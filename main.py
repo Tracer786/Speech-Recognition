@@ -32,9 +32,10 @@ def transcribe(audio_url):
     return job_id
 
 audio_url = upload(filename)
-job_id = transcribe(audio_url)
-print(job_id)
+transcript_id = transcribe(audio_url)
+print(transcript_id)
 
-# pooling 
+# polling 
+polling_endpoint = transcript_endpoint + '/' + transcript_id
 
 # save transcription
