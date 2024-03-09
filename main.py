@@ -37,5 +37,7 @@ print(transcript_id)
 
 # polling 
 polling_endpoint = transcript_endpoint + '/' + transcript_id
+polling_response = requests.get(polling_endpoint, headers = headers)
+print(polling_response)
 
 # save transcription
