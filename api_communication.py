@@ -53,11 +53,11 @@ def get_transcription_result_url(audio_url):
         time.sleep(30)
         
 # save transcription
-def save_transcript(audio_url,filename):
+def save_transcript(audio_url,new_filename):
     data,error = get_transcription_result_url(audio_url)
 
     if data:
-        text_filename = filename + ".txt"
+        text_filename = new_filename + ".txt"
         with open(text_filename, "w") as f:
             f.write(data['text'])
         print('Transcription saved!!')
